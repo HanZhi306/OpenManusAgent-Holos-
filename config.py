@@ -8,15 +8,15 @@ SERVER_PORT = int(os.getenv('AGENT_PORT', '10001'))
 AGENT_URL = os.getenv('AGENT_URL', f'http://localhost:{SERVER_PORT}/')
 
 # LLM Configuration
-API_KEY = os.getenv('API_KEY','282edc7433594a788ce28f3b0572dd2a')
-BASE_URL = os.getenv('BASE_URL', 'https://gpt.yunstorm.com')
-LLM_MODEL = os.getenv('LLM_MODEL', 'gpt-4o-mini')
+API_KEY = os.getenv('API_KEY','')
+BASE_URL = os.getenv('BASE_URL', '')
+LLM_MODEL = os.getenv('LLM_MODEL', '')
 LLM_MAX_TOKENS = int(os.getenv('LLM_MAX_TOKENS', '8000'))
 LLM_TEMPERATURE = float(os.getenv('LLM_TEMPERATURE', '0.01'))
 
 # LLM Provider Configuration
-LLM_PROVIDER = os.getenv('LLM_PROVIDER', 'azure').lower()
-AZURE_API_VERSION = os.getenv('AZURE_API_VERSION', '2025-04-01-preview')
+LLM_PROVIDER = os.getenv('LLM_PROVIDER', '').lower()
+AZURE_API_VERSION = os.getenv('AZURE_API_VERSION', '')
 
 # Logging Configuration
 LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
@@ -24,7 +24,7 @@ LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
 # Telemetry Configuration
 TELEMETRY_ENABLED = int(os.getenv('TELEMETRY_ENABLED', '1'))
 JAEGER_ENDPOINT = os.getenv("JAEGER_ENDPOINT", "http://localhost:4318/v1/traces")
-TELEMETRY_SERVICE_NAME = os.getenv('TELEMETRY_SERVICE_NAME', 'simple-test-agent')
+TELEMETRY_SERVICE_NAME = os.getenv('TELEMETRY_SERVICE_NAME', 'OpenManus-agent')
 TELEMETRY_SERVICE_VERSION = os.getenv('TELEMETRY_SERVICE_VERSION', '1.0.0')
 
 API_VERSION_STR = os.getenv("API_VERSION_STR", "/api/v1")

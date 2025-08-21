@@ -21,7 +21,7 @@ logger = get_logger('OpenManus_executor')
 A2AResult = Union[TaskStatusUpdateEvent, TaskArtifactUpdateEvent, Task, Message]
 
 
-class SimpleTestAgentExecutor(AgentExecutor):
+class OpenManusAgentExecutor(AgentExecutor):
     """OpenManus Agent Executor Implementation."""
 
     def __init__(self):
@@ -30,7 +30,7 @@ class SimpleTestAgentExecutor(AgentExecutor):
         
         self.tracer = PlantTracer(
             role="server",
-            creator_id="simple-test-agent",
+            creator_id="OpenManus-agent",
             base_url=API_BASE_URL
         )
         
@@ -111,7 +111,7 @@ If the user asks for something you cannot do, explain what you can help with ins
             if not task.metadata:
                 task.metadata = {}
             task.metadata['task_description'] = task_description
-            task.metadata['created_by'] = 'simple_test_agent'
+            task.metadata['created_by'] = 'OpenManus_agent'
             
             logger.info(f"Created task {task.id} with description: {task_description}")
             return task

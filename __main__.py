@@ -6,7 +6,7 @@ from datetime import datetime
 from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
-from agent_executor import SimpleTestAgentExecutor
+from agent_executor import OpenManusAgentExecutor
 from config import (
     SERVER_HOST, 
     SERVER_PORT, 
@@ -32,7 +32,7 @@ def create_server():
     #extended_agent_card = get_extended_agent_card()
     logger.info("Initializing components...")
     request_handler = DefaultRequestHandler(
-        agent_executor=SimpleTestAgentExecutor(),
+        agent_executor=OpenManusAgentExecutor(),
         task_store=InMemoryTaskStore(),
     )
     server = A2AStarletteApplication(
